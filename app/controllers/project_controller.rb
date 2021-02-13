@@ -20,23 +20,18 @@ class ProjectController < ActionController::API
   end
 
   def do
-  	todo_id = params.permit(:todo_id)['todo_id'].to_i
-  	project_id = params.permit(:project_id)['project_id'].to_i
+  	todo_project_params = params.permit(:id, :project_id)
     state = ActiveModel::Type::Boolean.new.cast(params.permit(:state)['state'])
 
-	  t = Todo.find(todo_id)
+	  t = Todo.find_by(todo_project_params)
 
 	  unless t
-	  	return render :json => {:message => "bad todo id"}
+	  	return render :json => {:message => "bad todo or project"}
 	  end 
 
-	  if t.project.id != project_id
-	  	return render :json => {:message => "bad project id"}
-	  end 
-
-      t.isCompleted = state
-      t.project.id
-      t.save!
+    t.isCompleted = state
+    t.project.id
+    t.save!
 
 	  return render :json => {:todo => t.to_hash}
   end
