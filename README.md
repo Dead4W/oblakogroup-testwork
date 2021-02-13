@@ -6,7 +6,7 @@ Run `rails server` for a dev server. Navigate to `http://localhost:3000/`.
 
 ## Configuration
 
-* Install depencies with `bundle install`
+* Install Dependencies with `bundle install`
 
 * Configure database in `config/database.yml`
 
