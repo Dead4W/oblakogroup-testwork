@@ -1,24 +1,15 @@
-# README
+# AppOblakogroupBack [test work](https://www.oblakogroup.ru/assignment/full-stack-developer)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development server
 
-Things you may want to cover:
+Run `rails server` for a dev server. Navigate to `http://localhost:3000/`.
 
-* Ruby version
+## Configuration
 
-* System dependencies
+* Install depencies with `bundle install`
 
-* Configuration
+* Configure database in `config/database.yml`
 
-* Database creation
+* Database initialization with `rake db:create db:migrate`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* You can use seeds in `db/seeds/seeds.yml` with `rake db:seed`
