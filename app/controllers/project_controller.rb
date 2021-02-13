@@ -10,7 +10,7 @@ class ProjectController < ActionController::API
   	  	project_todos = {
   	  		id: project.id,
   	  		title: project.title,
-  	  		todos: project.todo.all.select(["id", "text", "isCompleted"])
+  	  		todos: project.todo.all.select(["id", "text", "isCompleted"]).sort_by(&:created_at)
   	  	}
 
   	  	tree << project_todos
